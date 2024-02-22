@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 app.get('/weather', async (req, res) => {
     const { latitude, longitude } = req.query;
-    const apiKey = '6363b6a8c9c71debdd4ee07d34caaaf1'; // Use environment variable in production
+    const apiKey = process.env.OPENWEATHER_API_KEY; // Use environment variable in production
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
     try {
