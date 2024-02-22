@@ -1,7 +1,6 @@
 import express from 'express';
 import fetch from 'node-fetch';
-import os from 'os';
-import osUtils from 'os-utils';
+
 
 const app = express();
 const port = process.env.PORT || 3000; 
@@ -23,19 +22,6 @@ app.get('/weather', async (req, res) => {
     }
 });
 
-app.get('/system-stats', (req, res) => {
-    osUtils.cpuUsage(function(cpuPercentage) {
-        const stats = {
-            platform: os.platform(),
-            cpuCount: os.cpus().length,
-            cpuUsage: (cpuPercentage * 100).toFixed(2),
-            freeMemory: (os.freemem() / 1024 / 1024 / 1024).toFixed(2), // Convert from bytes to GB
-            totalMemory: (os.totalmem() / 1024 / 1024 / 1024).toFixed(2), // Convert from bytes to GB
-            systemUptime: os.uptime() // Uptime in seconds
-        };
-        res.json(stats);
-    });
-});
 
 
 
