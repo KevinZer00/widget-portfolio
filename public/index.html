@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget-Based Portfolio</title>
+    <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="widget" id="weather">
+            <div class="widget-titlebar">Weather</div>
+            <div class="widget-content">
+                <div id="weather-details">
+                    <!-- Temperature, wind speed, and toggle button will go here -->
+                    <p id="weather-location">Location: --</p>
+                    <p id="temperature">Temperature: --°C</p>
+                    <p id="wind-speed">Wind Speed: -- km/h</p>
+                    <p id="humidity">Humidity: --%</p>
+                    <p id="feels-like">Feels Like: --°C</p>
+                </div>
+                <div id="weather-icon-description">
+                    <!-- Icon and description will go here -->
+                    <img id="weather-icon" src="" alt="Weather Icon" style="width: 100px; height: 100px;">
+                    <p id="weather-description">Description: --</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget" id="music-player">
+            <div class="widget-titlebar">Music Player</div>
+            <div class="widget-content">
+                
+                <div id="player-info">
+                    <div id="song-title">Song Title</div>
+                    <div id="song-artist">Song Artist</div>
+                </div>
+                <div id="equalizer-container">
+                    <canvas id="equalizer" width="600" height="300"></canvas>
+                </div>
+                <div id="audio-controls">
+                    <button id="prev-track" onclick="changeTrack(-1)">&#9664;&#9664;</button>
+                    <button id="play-pause" onclick="togglePlayPause()">&#9654;</button>
+                    <button id="next-track" onclick="changeTrack(1)">&#9654;&#9654;</button>
+                </div>
+                <div id="volume-control">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                </div>
+                
+                
+                
+                <!-- Hidden audio element for playing music -->
+                <audio id="audioPlayer" preload="auto"></audio>
+            </div>
+        </div>
+        
+        
+        <div class="widget widget-tall" id="terminal">
+            <div class="widget-titlebar">Terminal</div>
+            <div class="widget-content" id="terminal-body">
+                <div id="output">
+                    <p>Welcome to the FutureOS Terminal. Type 'help' for a list of commands.</p>
+                </div>
+                <div id="input-line" class="input-line">
+                    <div class="prompt">user@futureos:~$</div>
+                    <div><input type="text" id="input" autofocus></div>
+                </div>
+            </div>
+        </div>
+        <!-- Additional widgets with title bars -->
+        <div class="widget">
+            <div class="widget-titlebar">Projects</div>
+            <div class="widget-content">
+                <div class="folders-grid">
+                    <div class="folder" id="about"><i class="fas fa-folder"></i><span>README</span></div>
+                    <div class="folder" id="project1"><i class="fas fa-folder"></i><span>Project 1</span></div>
+                    <div class="folder" id="project2"><i class="fas fa-folder"></i><span>Project 2</span></div>
+                    <div class="folder" id="project3"><i class="fas fa-folder"></i><span>Project 3</span></div>
+                    <div class="folder" id="project4"><i class="fas fa-folder"></i><span>Project 4</span></div>
+                    <div class="folder" id="source"><i class="fas fa-folder"></i><span>Source Code</span></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="widget" id="clock">
+            <div class="widget-titlebar">Time</div>
+            <div class="widget-content">
+                <div id="date">Loading date...</div>
+                <div id="time">Loading time...</div>
+            </div>
+        </div>
+
+        <div class="widget" id="system-stats-widget">
+            <div class="widget-titlebar">System Stats</div>
+            <div class="widget-content">
+                <div id="system-info">
+                    <p id="platform-info"></p>
+                    <p id="cpu-count-info"></p>
+                    <p id="free-memory-info"></p>
+                    <p id="total-memory-info"></p>
+                    <p id="uptime-info"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget" id="cpu-widget">
+            <div class="widget-titlebar">CPU Usage</div>
+            <div class="widget-content">
+                <div class="charts">
+                    <canvas id="cpuChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget" id="socials">
+            <div class="widget-titlebar">Socials</div>
+            <div class="widget-content">
+                <div class="socials-grid">
+                    <div class="folder" id="github"><i class="fab fa-github"></i><span>Github</span></div>
+                    <div class="folder" id="linkedin"><i class="fab fa-linkedin"></i><span>LinkedIn</span></div>
+                    <div class="folder" id="discord"><i class="fab fa-discord"></i><span>Discord</span></div>
+                    <div class="folder" id="email"><i class="fas fa-envelope"></i><span>Email</span></div>
+                    <div class="folder" id="steam"><i class="fab fa-steam"></i><span>Steam</span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Modals for each folder (initially hidden) -->
+    <div id="modal-about" class="modal">
+        <div class="modal-header">
+            <span>README</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>Hi there! My name is Kevin and welcome to my portfolio! 
+
+                </br></br>
+                I am an aspiring front-end web developer. All my knowledge was obtained through online sources
+                such as The Odin Project, YouTube, and W3Schools!
+
+                </br></br>
+                Making fun, engaging, and creative projects is what I enjoy doing! I discovered that
+                web development is a perfect outlet for me to do so. 
+
+                </br></br>
+                I hope you enjoy the rest of the portfolio! Please play around with all the little widgets
+                (especially the terminal). 
+            </p>
+        </div>
+    </div>
+    <div id="modal-project1" class="modal">
+        <div class="modal-header">
+            <span>Project 1</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h1>Dungeon Crawler Game</h1>
+            <h4>Technologies: Phaser.JS, CSS, HTML, Tiled (Tilemap Editor)</h4>
+            <a href="https://your-demo-link.com" target="_blank" class="live-demo-button">Live Demo</a>
+            <p>This is a single-level dungeon crawler 2D game.
+            </br></br>
+                This project was originally meant to be my gamified portfolio. The objective of the game is to
+                control a knight and find all four treasure chests. Each treasure chest opens up a modal
+                explaining a particular project I completed. 
+            </br></br>
+                The game features a variety of monsters with differing healths and movement speeds. The game 
+                incorporates key game components such as collisions, enemy-player detection, combat system,
+                health system, and menu UI. 
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-project2" class="modal">
+        <div class="modal-header">
+            <span>Project 2</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h1>Genesis AI</h1>
+            <h4>Technologies: Vanilla JS, CSS, HTML</h4>
+            <a href="https://your-demo-link.com" target="_blank" class="live-demo-button">Live Demo</a>
+            <p>This is a mock site for a fictional AI named Genesis built with vanilla JS.
+            </br></br>
+                Meant as a satirical site aimed towards the emerging landscape of AIs, this site revolves
+                around a new fictional AI that promises to boost user productivity and provide companionship. 
+            </br></br>
+                The site features an Ubuntu inspired theme, a player-computer Tic-Tac-Toe game simulation with
+                the min-max algorithm implementation, a Spotify embedded music player, and a chat box. 
+            </br></br>
+                NOTE: There is a hidden feature within the site. Please continue chatting with the AI despite
+                incoherent responses.
+            </p>
+        </div>
+    </div>
+    
+    
+    <div id="modal-project3" class="modal">
+        <div class="modal-header">
+            <span>Project 3</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h1>Widget-Based Portfolio</h1>
+            <h4>Technologies: Node.JS, Vanilla JS, CSS, HTML</h4>
+            <a href="https://your-demo-link.com" target="_blank" class="live-demo-button">Live Demo</a>
+            <p>This project is the portfolio you are currently looking at!
+            </br></br>
+                The portfolio was inspired by those retro dashboards you would typically see in movies
+                and games. 
+            </br></br>
+                This project features a weather API widget with integrated geolocation, a web audio API music
+                player with equalizer, a terminal that accepts user commands, current time/date, hardware stats retrieval
+                and dynamic CPU utilization graph (through the use of os-utils library)
+            </p>
+        </div>
+    </div>
+    <div id="modal-project4" class="modal">
+        <div class="modal-header">
+            <span>About</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-content">
+            <p>Content for Project 1...</p>
+        </div>
+    </div>
+    <div id="modal-source" class="modal">
+        <div class="modal-header">
+            <span>Source Code</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-content">
+            <p>Content for Project 1...</p>
+        </div>
+    </div>
+    <div id="modal-github" class="modal">
+        <div class="modal-header">
+            <span>About</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-content">
+            <p>Content for Project 1...</p>
+        </div>
+    </div>
+    <div id="modal-linkedin" class="modal">
+        <div class="modal-header">
+            <span>LinkedIn</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-content">
+            <p>Content for Project 1...</p>
+        </div>
+    </div>
+    <div id="modal-discord" class="modal">
+        <div class="modal-header">
+            <span>Discord</span>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-content">
+            <p>Content for Project 1...</p>
+        </div>
+    </div>
+
+    <script src="themes.js"></script>
+    <script src="folders.js"></script>
+    <script src="weather.js"></script>
+    <script src="music.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="usage.js"></script>
+    <script src="terminal.js"></script>
+    <script src="clock.js"></script>
+
+</body>
+
+</html>

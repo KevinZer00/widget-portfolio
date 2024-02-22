@@ -1,0 +1,587 @@
+@font-face {
+  font-family: Digital;
+  src: url('assets/digital-7\ \(mono\).ttf');
+}
+
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  /* Monospace font for the terminal feel */
+  background-color: #333;
+  /* Dark background for the page */
+  width: 100vw;
+  height: 100vh;
+  /* Make sure the body takes up at least the full height of the viewport */
+  display: flex;
+  /* Use flexbox to center its children */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 90vh;
+  /* Adjusted height */
+  width: 1600px;
+  /* Adjust width as necessary */
+  box-sizing: border-box;
+}
+
+
+.widget {
+  background-color: #1e1e1e;
+  /* Dark background for terminal */
+  color: #00ff00;
+  /* Green text, common in terminals */
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  /* Needed for positioning the title bar */
+}
+
+/* Title Bar */
+.widget-titlebar {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1em;
+  border-top-left-radius: 5px;
+  /* Rounded corners for the title bar */
+  border-top-right-radius: 5px;
+}
+
+.widget-content {
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 10px;
+}
+
+/* Custom sizes (previously defined) */
+
+.widget-large {
+  grid-column: span 2;
+}
+
+.widget-tall {
+  grid-row: span 2;
+}
+
+.widget-big {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#weather .widget-content {
+  display: flex;
+  justify-content: space-between;
+  /* Spread the child divs out evenly */
+  align-items: start;
+  /* Align the items to the top */
+  padding: 20px;
+  border-radius: 5px;
+  /* Rounded corners for the widget */
+}
+
+#weather #weather-details,
+#weather #weather-icon-description {
+  flex: 1;
+  /* Distribute space evenly between the two columns */
+
+  display: flex;
+  flex-direction: column;
+  /* Stack the child elements vertically */
+}
+
+#weather #weather-details {
+  align-items: flex-start;
+  /* Align text to the start (left) */
+}
+
+#weather #weather-icon-description {
+  align-items: center;
+  /* Center the icon and description */
+  padding-left: 30px;
+  /* Add some left padding to separate from the details */
+}
+
+#weather .weather-icon img {
+  width: auto;
+  /* Maintain the aspect ratio */
+  height: 100px;
+  /* Set a fixed height for the icon */
+  border-radius: 50%;
+  /* Circular icon */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Soft shadow for depth */
+  background-color: #fff;
+  /* White background to make the icon stand out */
+  display: block;
+  /* Ensure it's block for margins to work */
+  margin-bottom: 10px;
+  /* Margin below the icon */
+}
+
+#weather p {
+  margin: 5px 0;
+  /* Consistent margin */
+  font-size: 1em;
+  /* Adjust the font size as needed */
+  line-height: 1.5;
+  /* Line height for better readability */
+}
+
+#music-player {
+  border-radius: 10px;
+  /* Rounded corners for a modern look */
+}
+
+#equalizer {
+  width: 100%;
+  /* Full container width */
+  height: 100px;
+  /* Height of the equalizer canvas */
+}
+
+#song-title {
+  text-align: center;
+  font-size: 1.5em;
+  /* Larger font size for the song title */
+  font-weight: bold;
+  /* Make the title bold */
+  margin-bottom: 5px;
+  /* Space between title and artist */
+}
+
+#song-artist {
+  text-align: center;
+  font-size: 1.2em;
+  /* Slightly smaller font size for the artist */
+}
+
+#audio-controls {
+  display: flex;
+  /* Flex container for the controls */
+  justify-content: center;
+  /* Center controls */
+  align-items: center;
+  /* Vertically align controls */
+}
+
+#audio-controls button {
+  color: #0f0;
+  background: none;
+  /* No background color */
+  border: none;
+  /* No border */
+  margin: 0 15px;
+  /* Space around buttons */
+  font-size: 1.25em;
+  /* Larger font size for icons */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+}
+
+#audio-controls button:hover {
+  color: rgb(1, 150, 1);
+  /* Highlight color on hover */
+}
+
+#audio-controls button:focus {
+  outline: none;
+  /* Remove the focus outline */
+}
+
+
+/* Add transitions for interactive elements */
+#audio-controls button,
+#song-title,
+#song-artist {
+  transition: color 0.3s ease;
+}
+
+#volume-control {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  width: 50%;
+  margin: auto;
+}
+
+.volume-icon {
+  background: none;
+  border: none;
+  color: #00FF00;
+  /* Adjust the color to match your theme */
+  font-size: 1em;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#volume-slider {
+  flex-grow: 1;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+#volume-slider:hover {
+  opacity: 1;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 5px;
+  height: 15px;
+  cursor: pointer;
+}
+
+#volume-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+#terminal {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#terminal-body {
+  flex-grow: 1;
+  overflow-y: auto;
+
+}
+
+/* Styles for the scrollbar track */
+#terminal-body::-webkit-scrollbar {
+  width: 12px;
+  /* Width of the scrollbar */
+  background-color: #333;
+  /* Track color */
+}
+
+/* Styles for the scrollbar thumb (the part that you drag) */
+#terminal-body::-webkit-scrollbar-thumb {
+  background-color: #0f0;
+  /* Thumb color */
+  border-radius: 6px;
+  /* Rounded corners on the thumb */
+  border: 3px solid #333;
+  /* Creates a little space between the thumb and the track */
+}
+
+/* Styles for the scrollbar thumb when it's active or being dragged */
+#terminal-body::-webkit-scrollbar-thumb:active {
+  background-color: #0b0;
+  /* Slightly darker color when active */
+}
+
+/* Styles for the scrollbar thumb on hover */
+#terminal-body::-webkit-scrollbar-thumb:hover {
+  background-color: #0d0;
+  /* Lighten the thumb color slightly on hover */
+}
+
+/* For Firefox */
+#terminal-body {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: #0f0 #333;
+  /* thumb and track color */
+}
+
+
+
+#output {
+  font-size: 1em;
+  padding: 10px;
+  overflow: auto;
+}
+
+
+#input-line {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.prompt {
+  margin-right: 5px;
+}
+
+#input {
+  flex-grow: 1;
+  background: transparent;
+  color: #0f0;
+  border: none;
+  outline: none;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 1em;
+}
+
+#input::placeholder {}
+
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+.folder {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  /* Optional border-radius for aesthetics */
+  transition: background-color 0.3s ease;
+  width: 100px;
+  margin: auto;
+  font-size: 1em;
+}
+
+.folder i {
+  font-size: 2em;
+  /* Adjust icon size as needed */
+  margin-bottom: 5px;
+}
+
+.folder:hover {
+  background-color: #3e7c3e;
+  /* Change as desired */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 10;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #0f0;
+  /* Bright green text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid #333;
+  width: 40%;
+  min-width: 300px;
+  height: 500px;
+  font-family: 'Courier New', Courier, monospace;
+  z-index: 100;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.modal-body {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+
+/* Styles for the scrollbar track */
+.modal-body::-webkit-scrollbar {
+  width: 12px;
+  /* Width of the scrollbar */
+  background-color: #333;
+  /* Track color */
+}
+
+/* Styles for the scrollbar thumb (the part that you drag) */
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: #0f0;
+  /* Thumb color */
+  border-radius: 6px;
+  /* Rounded corners on the thumb */
+  border: 3px solid #333;
+  /* Creates a little space between the thumb and the track */
+}
+
+/* Styles for the scrollbar thumb when it's active or being dragged */
+.modal-body::-webkit-scrollbar-thumb:active {
+  background-color: #0b0;
+  /* Slightly darker color when active */
+}
+
+/* Styles for the scrollbar thumb on hover */
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: #0d0;
+  /* Lighten the thumb color slightly on hover */
+}
+
+.modal-header {
+  padding: 10px;
+  background: #333;
+  /* Dark green header */
+  border-top-left-radius: 5px;
+  /* Match the modal's border radius */
+  border-top-right-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+
+
+
+.modal-header span {
+  color: white;
+  font-weight: bold;
+}
+
+
+.close-button {
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close-button:hover {
+  color: #ffffff;
+  /* Change color on hover for better visibility */
+}
+
+.live-demo-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #0f0;
+  text-decoration: none;
+  border-radius: 2.5px;
+}
+
+.live-demo-button:hover {
+  background-color: #636363;
+}
+
+
+
+#clock .widget-content {
+  font-family: Digital;
+  /* Monospace font for the terminal look */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Vertically centers the content in the flex container */
+  align-items: center;
+  /* Horizontally centers the content */
+  height: 200px;
+  /* Ensure the container takes up the full height */
+}
+
+
+#date {
+  font-size: 2em;
+  /* Slightly smaller font size for the date */
+  margin-bottom: 5px;
+  /* Adds space between the date and time */
+  text-align: center;
+  /* Center the date if preferred */
+}
+
+#time {
+  font-size: 5em;
+  /* Larger font size for the time */
+  text-align: center;
+  /* Center the time if preferred */
+}
+
+#system-stats-widget {
+  width: 100%;
+}
+
+
+#system-stats-widget .widget-content {
+  display: flex;
+  align-items: flex-start;
+  /* Align items to the start of the flex container */
+  height: 200px;
+  padding: 20px;
+  width: 100%;
+}
+
+.system-info {
+  flex: 1;
+  /* Allows the text stats to grow as needed, taking up necessary space */
+}
+
+#cpu-widget {
+  display: flex;
+  flex-direction: column;
+  /* Stack title and content */
+  height: 100%;
+  /* Set to desired height or leave it to automatically size based on content */
+}
+
+.charts {
+  flex: 1;
+  /* Allow chart container to grow and fill the space */
+  display: flex;
+  /* Flex container for the canvas */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+#cpuChart {
+  width: 100%;
+  /* Chart will fill the width of .charts */
+  height: auto;
+  /* Chart will maintain aspect ratio */
+}
+
+
+
+
+.socials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}

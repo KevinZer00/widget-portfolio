@@ -1,0 +1,553 @@
+.light-mode {
+    background-color: #f5f5f5; /* Soft light grey for page background */
+    color: rgb(0, 123, 255);
+  }
+  
+  /* Light mode styles for widgets */
+  .light-mode .widget {
+    background-color: #ffffff; /* White background for widgets */
+    color: #333; /* Dark grey text for good readability */
+    border: 1px solid #ddd; /* Light border for the widgets */
+  }
+  
+  .light-mode .widget-titlebar {
+    background-color: #e9ecef; /* Light grey background for title bars */
+    color: #495057; /* Darker grey for title text */
+  }
+  
+  /* Adjust the prompt and input text color */
+  .light-mode .prompt, .light-mode #input {
+    color: rgb(0, 123, 255);/* Darker grey to ensure readability */
+  }
+  
+  /* Light mode styles for widget content */
+  .light-mode .widget-content {
+    color: rgb(0, 123, 255); /* Dark grey for content for readability */
+  }
+  
+  
+  .light-mode #audio-controls button {
+    color: rgb(0, 123, 255);
+  }
+  
+  .light-mode #audio-controls button:hover {
+    color: rgb(0, 62, 128); /* Highlight color on hover */
+  }
+  
+  .light-mode .volume-icon {
+    color: rgb(0, 123, 255);
+  }
+  
+  .light-mode #terminal {
+    color: rgb(0, 123, 255);
+  }
+  
+  .light-mode .folder:hover {
+    background-color: #007bff57; /* Change as desired */
+  }
+  
+  .light-mode button {
+    background-color: #007bff; /* Bootstrap primary button color */
+    color: #ffffff;
+    border-color: #007bff;
+  }
+  
+  .light-mode button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Update chart line colors for light mode */
+  .light-mode .chart-line {
+    stroke: #495057; /* Dark grey for chart lines */
+  }
+  
+  /* Styles for the scrollbar thumb (the part that you drag) */
+  .light-mode #terminal-body::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Thumb color */
+    border-radius: 6px; /* Rounded corners on the thumb */
+    border: 3px solid #333; /* Creates a little space between the thumb and the track */
+  }
+  
+  /* Styles for the scrollbar thumb when it's active or being dragged */
+  .light-mode #terminal-body::-webkit-scrollbar-thumb:active {
+    background-color: #007bff; /* Slightly darker color when active */
+  }
+  
+  /* Styles for the scrollbar thumb on hover */
+  .light-mode #terminal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #007bff; /* Lighten the thumb color slightly on hover */
+  }
+  
+  /* For Firefox */
+  .light-mode#terminal-body {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #007bff; #333; /* thumb and track color */
+  }
+  
+  .light-mode .modal {
+    background-color: white;
+    color: #0062ca;
+    border: 3px solid #e9ecef; 
+  }
+  
+  .light-mode .modal-header {
+    color: black;
+    background-color: #e9ecef; 
+  }
+  
+  .light-mode .modal-header span {
+    color: black;
+    font-weight: bold;
+  }
+
+  .light-mode .modal-body::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    background-color: #ffffff;
+    /* Track color */
+  }
+  
+  /* Styles for the scrollbar thumb (the part that you drag) */
+  .light-mode .modal-body::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    /* Thumb color */
+    border-radius: 6px;
+    /* Rounded corners on the thumb */
+    border: 3px solid white;
+    /* Creates a little space between the thumb and the track */
+  }
+  
+  /* Styles for the scrollbar thumb when it's active or being dragged */
+  .light-mode .modal-body::-webkit-scrollbar-thumb:active {
+    background-color: #0062ca;
+    /* Slightly darker color when active */
+  }
+  
+  /* Styles for the scrollbar thumb on hover */
+  .light-mode .modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #0062ca;
+    /* Lighten the thumb color slightly on hover */
+  }
+
+  .light-mode .live-demo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e9ecef; 
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 2.5px;
+  }
+  
+  .light-mode .live-demo-button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+
+  
+  
+  
+  
+  
+  .pastel-mode {
+    background-color: #e9e8cc; /* Soft off-white for page background */
+    color: #5c5c8a; /* Pastel dark blue */
+  }
+  
+  /* Pastel mode styles for widgets */
+  .pastel-mode .widget {
+    background-color: #e0f7fa; /* Pastel cyan for widget backgrounds */
+    color: #5c5c8a; /* Pastel dark blue for text */
+    border: 1px solid #b2ebf2; /* Light pastel cyan border for the widgets */
+  }
+  
+  .pastel-mode .widget-titlebar {
+    background-color: #fce4ec; /* Pastel pink for title bars */
+    color: #5c5c8a; /* Pastel dark blue for title text */
+  }
+  
+  /* Adjust the prompt and input text color */
+  .pastel-mode .prompt, .pastel-mode #input {
+    color: #5c5c8a; /* Pastel dark blue */
+  }
+  
+  /* Pastel mode styles for widget content */
+  .pastel-mode .widget-content {
+    color: #5c5c8a; /* Pastel dark blue for content */
+  }
+  
+  .pastel-mode #audio-controls button {
+    color: #f8bbd0; /* Pastel pink for control buttons */
+  }
+  
+  .pastel-mode #audio-controls button:hover {
+    color: #f48fb1; /* Slightly darker pink on hover */
+  }
+
+  .pastel-mode .volume-icon {
+    color: #f48fb1;
+  }
+  
+  .pastel-mode #terminal {
+    color: #5c5c8a;
+  }
+  
+  .pastel-mode .folder:hover {
+    background-color: #b2ebf2; /* Light pastel cyan for folder hover */
+  }
+  
+  .pastel-mode button {
+    background-color: #ba68c8; /* Pastel purple for buttons */
+    color: #ffffff;
+    border-color: #ba68c8;
+  }
+  
+  .pastel-mode button:hover {
+    background-color: #ab47bc; /* Slightly darker pastel purple on hover */
+    border-color: #ab47bc;
+  }
+  
+  /* Update chart line colors for pastel mode */
+  .pastel-mode .chart-line {
+    stroke: #5c5c8a; /* Pastel dark blue for chart lines */
+  }
+  
+  /* Styles for the scrollbar thumb (the part that you drag) */
+  .pastel-mode #terminal-body::-webkit-scrollbar-thumb {
+    background-color: #f8bbd0; /* Thumb color - pastel pink */
+    border-radius: 6px; /* Rounded corners on the thumb */
+  }
+  
+  /* Styles for the scrollbar thumb when it's active or being dragged */
+  .pastel-mode #terminal-body::-webkit-scrollbar-thumb:active {
+    background-color: #f48fb1; /* Slightly darker pink when active */
+  }
+  
+  /* Styles for the scrollbar thumb on hover */
+  .pastel-mode #terminal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #f48fb1; /* Lighten the thumb color slightly on hover */
+  }
+  
+  /* For Firefox */
+  .pastel-mode #terminal-body {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #f8bbd0 #e0f7fa; /* thumb and track color */
+  }
+
+  .pastel-mode .modal {
+    background-color: #e0f7fa;
+    color: #5c5c8a;
+    border: 3px solid #fce4ec;
+  }
+  
+  .pastel-mode .modal-header {
+    color: #5c5c8a;
+    background-color: #fce4ec;
+  }
+  
+  .pastel-mode .modal-header span {
+    color: #5c5c8a;
+    font-weight: bold;
+  }
+
+  .pastel-mode .modal-body::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    background-color: #e0f7fa;
+    /* Track color */
+  }
+  
+  /* Styles for the scrollbar thumb (the part that you drag) */
+  .pastel-mode .modal-body::-webkit-scrollbar-thumb {
+    background-color: #fce4ec;
+    /* Thumb color */
+    border-radius: 6px;
+    /* Rounded corners on the thumb */
+    border: 3px solid #e0f7fa;
+    /* Creates a little space between the thumb and the track */
+  }
+  
+  /* Styles for the scrollbar thumb when it's active or being dragged */
+  .pastel-mode .modal-body::-webkit-scrollbar-thumb:active {
+    background-color: #b98c9c;
+    /* Slightly darker color when active */
+  }
+  
+  /* Styles for the scrollbar thumb on hover */
+  .pastel-mode .modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #b98c9c;
+    /* Lighten the thumb color slightly on hover */
+  }
+
+  .pastel-mode .live-demo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fce4ec;
+    color: #5c5c8a;
+    text-decoration: none;
+    border-radius: 2.5px;
+  }
+  
+  .pastel-mode .live-demo-button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+  .synthwave-mode {
+    background-color: #300A24; /* Ubuntu dark purple for page background */
+  }
+  
+  /* Ubuntu mode styles for widgets */
+  .synthwave-mode .widget {
+    background-color: #5E2750; /* Ubuntu medium purple for widgets */
+    color: #69e6db; /* Light grey for text */
+    border: 1px solid #69e6db; /* Light purple border for the widgets */
+  }
+  
+  .synthwave-mode .widget-titlebar {
+    background-color: #77216F; /* Ubuntu darker purple for title bars */
+    color: #69e6db; /* Light grey for title text */
+  }
+  
+  /* Adjust the prompt and input text color */
+  .synthwave-mode .prompt, .synthwave-mode #input {
+    color: #fb8e06; /* Ubuntu orange */
+  }
+  
+  /* Ubuntu mode styles for widget content */
+  .synthwave-mode .widget-content {
+    color: #69e6db; /* Light grey for content */
+  }
+  
+  .synthwave-mode #audio-controls button {
+    color: #fb8e06; /* Ubuntu orange */
+  }
+  
+  .synthwave-mode #audio-controls button:hover {
+    color: #fb8e06; /* Darker orange on hover */
+  }
+
+  .synthwave-mode .volume-icon {
+    color: #fb8e06;
+  }
+  
+  .synthwave-mode #terminal {
+    color: #E1E1E1; /* Light grey */
+  }
+  
+  .synthwave-mode .folder:hover {
+    background-color: #fb8e06 /* Ubuntu orange for folder hover */
+  }
+  
+  .synthwave-mode button {
+    background-color: #fb8e06 /* Ubuntu orange for buttons */
+    color: #FFFFFF; /* White */
+    border-color: #fb8e06
+  }
+  
+  .synthwave-mode button:hover {
+    background-color: #CF4813; /* Darker orange on hover */
+    border-color: #CF4813;
+  }
+  
+  /* Update chart line colors for Ubuntu mode */
+  .synthwave-mode .chart-line {
+    stroke: #E1E1E1; /* Light grey for chart lines */
+  }
+  
+  /* Styles for the scrollbar thumb (the part that you drag) */
+  .synthwave-mode #terminal-body::-webkit-scrollbar-thumb {
+    background-color: #E95420; /* Thumb color - Ubuntu orange */
+    border-radius: 6px; /* Rounded corners on the thumb */
+    border: 3px solid #5E2750; /* Creates a space between the thumb and the track */
+  }
+  
+  /* Styles for the scrollbar thumb when it's active or being dragged */
+  .synthwave-mode #terminal-body::-webkit-scrollbar-thumb:active {
+    background-color: #CF4813; /* Darker orange when active */
+  }
+  
+  /* Styles for the scrollbar thumb on hover */
+  .synthwave-mode #terminal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #CF4813; /* Lighten the thumb color slightly on hover */
+  }
+  
+  /* For Firefox */
+  .synthwave-mode #terminal-body {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #E95420 #5E2750; /* thumb and track color */
+  }
+
+  .synthwave-mode .modal {
+    background-color: #5E2750;
+    color: #69e6db; /* Light grey for text */
+    border: 1px solid #69e6db;
+  }
+  
+  .synthwave-mode .modal-header {
+    background-color: #77216F; /* Ubuntu darker purple for title bars */
+    color: #69e6db; /* Light grey for title text */
+  }
+  
+  .synthwave-mode .modal-header span {
+    color: #69e6db; 
+    font-weight: bold;
+  }
+
+  .synthwave-mode .modal-body::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    background-color: #5E2750;
+    /* Track color */
+  }
+  
+  /* Styles for the scrollbar thumb (the part that you drag) */
+  .synthwave-mode .modal-body::-webkit-scrollbar-thumb {
+    background-color: #E95420;
+    /* Thumb color */
+    border-radius: 6px;
+    /* Rounded corners on the thumb */
+    border: 3px solid #5E2750;
+    /* Creates a little space between the thumb and the track */
+  }
+  
+  /* Styles for the scrollbar thumb when it's active or being dragged */
+  .synthwave-mode .modal-body::-webkit-scrollbar-thumb:active {
+    background-color: #CF4813;
+    /* Slightly darker color when active */
+  }
+
+  .synthwave-mode .modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #CF4813;
+    /* Lighten the thumb color slightly on hover */
+  }
+
+
+  .synthwave-mode .live-demo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #77216F;
+    color: #69e6db;
+    text-decoration: none;
+    border-radius: 2.5px;
+  }
+  
+  .synthwave-mode .live-demo-button:hover {
+    background-color: #e98d6c;
+  }
+  
+
+  
+  
+  
+  
+  
+  
+  .halo-mode {
+    background-color: #1B1D1E; /* Dark gunmetal grey for page background */
+    color: #A5C4B4; /* Muted green for text */
+  }
+  
+  /* Halo mode styles for widgets */
+  .halo-mode .widget {
+    background-color: #2D3133; /* Slightly lighter gunmetal grey for widgets */
+    color: #A5C4B4; /* Muted green for text */
+    border: 1px solid #41484D; /* Metallic grey border for the widgets */
+  }
+  
+  .halo-mode .widget-titlebar {
+    background-color: #3E484F; /* Metallic grey for title bars */
+    color: #A5C4B4; /* Muted green for title text */
+  }
+  
+  /* Adjust the prompt and input text color */
+  .halo-mode .prompt, .halo-mode #input {
+    color: #6B8E23; /* Olive green */
+  }
+  
+  /* Halo mode styles for widget content */
+  .halo-mode .widget-content {
+    color: #A5C4B4; /* Muted green for content */
+  }
+  
+  .halo-mode #audio-controls button {
+    color: #6B8E23; /* Olive green */
+  }
+  
+  .halo-mode #audio-controls button:hover {
+    color: #556B2F; /* Darker olive green on hover */
+  }
+  
+  
+  .halo-mode #terminal {
+    color: #A5C4B4; /* Muted green */
+  }
+  
+  .halo-mode .folder:hover {
+    background-color: #6B8E23; /* Olive green for folder hover */
+  }
+  
+  .halo-mode button {
+    background-color: #6B8E23; /* Olive green for buttons */
+    color: #1B1D1E; /* Dark gunmetal grey */
+    border-color: #6B8E23;
+  }
+  
+  .halo-mode button:hover {
+    background-color: #556B2F; /* Darker olive green on hover */
+    border-color: #556B2F;
+  }
+
+  .halo-mode .volume-icon {
+    color: #556B2F;
+  }
+  
+  /* Update chart line colors for Halo mode */
+  .halo-mode .chart-line {
+    stroke: #A5C4B4; /* Muted green for chart lines */
+  }
+  
+  /* Styles for the scrollbar thumb (the part that you drag) */
+  .halo-mode #terminal-body::-webkit-scrollbar-thumb {
+    background-color: #6B8E23; /* Thumb color - olive green */
+    border-radius: 6px; /* Rounded corners on the thumb */
+    border: 3px solid #2D3133; /* Creates a space between the thumb and the track */
+  }
+  
+  /* Styles for the scrollbar thumb when it's active or being dragged */
+  .halo-mode #terminal-body::-webkit-scrollbar-thumb:active {
+    background-color: #556B2F; /* Darker olive green when active */
+  }
+  
+  /* Styles for the scrollbar thumb on hover */
+  .halo-mode #terminal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #556B2F; /* Lighten the thumb color slightly on hover */
+  }
+  
+  /* For Firefox */
+  .halo-mode #terminal-body {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #6B8E23 #2D3133; /* thumb and track color */
+  }
+
+
+  .halo-mode .modal {
+    background-color: #2D3133; /* Slightly lighter gunmetal grey for widgets */
+    color: #A5C4B4; /* Muted green for text */
+    border: 1px solid #41484D; /* Metallic grey border for the widgets */
+  }
+  
+  .halo-mode .modal-header {
+    background-color: #3E484F; /* Metallic grey for title bars */
+    color: #A5C4B4; /* Muted green for title text */
+  }
+  
+  .halo-mode .modal-header span {
+    color: #A5C4B4;
+    font-weight: bold;
+  }
+  
+
+
+  
