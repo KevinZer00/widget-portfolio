@@ -4,31 +4,31 @@ const themes = {
     light: {
         bodyClass: 'light-mode',
         equalizerColor: 'rgb(0, 123, 255)',
-        cpuChartColor: 'rgb(0, 123, 255)',
+        networkChartColor: 'rgb(0, 123, 255)',
         volumeSliderColor: 'rgb(0, 123, 255)' // Add this line
     },
     dark: {
         bodyClass: '',
         equalizerColor: 'rgb(0, 255, 0)',
-        cpuChartColor: 'rgb(0, 255, 0)',
+        networkChartColor: 'rgb(0, 255, 0)',
         volumeSliderColor: 'rgb(0, 255, 0)' // Add this line
     },
     pastel: {
         bodyClass: 'pastel-mode',
         equalizerColor: 'rgb(185, 157, 255)',
-        cpuChartColor: 'rgb(185, 157, 255)',
+        networkChartColor: 'rgb(185, 157, 255)',
         volumeSliderColor: 'rgb(185, 157, 255)' // Add this line
     },
     synthwave: {
         bodyClass: 'synthwave-mode',
         equalizerColor: 'rgb(251, 142, 6)',
-        cpuChartColor: 'rgb(251, 142, 6)',
+        networkChartColor: 'rgb(251, 142, 6)',
         volumeSliderColor: 'rgb(251, 142, 6)' // Add this line
     },
     halo: {
         bodyClass: 'halo-mode',
         equalizerColor: 'rgb(251, 142, 6)',
-        cpuChartColor: 'rgb(251, 142, 6)',
+        networkChartColor: 'rgb(251, 142, 6)',
         volumeSliderColor: 'rgb(251, 142, 6)' // Add this line
     }
 };
@@ -55,7 +55,7 @@ function changeTheme(theme) {
      updateVolumeSliderColor();
 
     // Update the chart color
-    updateChartColor(cpuChart, themes[theme].cpuChartColor);
+    updateChartColor(networkChart, themes[theme].networkChartColor);
 
     // Update the current theme
     currentTheme = theme;
