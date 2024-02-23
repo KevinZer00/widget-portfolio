@@ -96,27 +96,29 @@
             </div>
         </div>
 
-        <div class="widget" id="system-stats-widget">
-            <div class="widget-titlebar">System Stats</div>
+        <div class="widget" id="client-stats-widget">
+            <div class="widget-titlebar">Client-Side Information</div>
             <div class="widget-content">
-                <div id="system-info">
-                    <p id="platform-info"></p>
-                    <p id="cpu-count-info"></p>
-                    <p id="free-memory-info"></p>
-                    <p id="total-memory-info"></p>
-                    <p id="uptime-info"></p>
+                <div id="client-info">
+                    <p><strong>Browser:</strong> <span id="browser-info"></span></p>
+                    <p><strong>Screen Resolution:</strong> <span id="screen-resolution"></span></p>
+                    <p><strong>Browser Language:</strong> <span id="browser-language"></span></p>
+                    <p><strong>Online Status:</strong> <span id="online-status"></span></p>
+                    <p><strong>Viewport Size:</strong> <span id="viewport-size"></span></p>
                 </div>
             </div>
         </div>
+        
+        
+        
 
-        <div class="widget" id="cpu-widget">
-            <div class="widget-titlebar">CPU Usage</div>
+        <div class="widget" id="network-utilization-widget">
+            <div class="widget-titlebar">Network Utilization</div>
             <div class="widget-content">
-                <div class="charts">
-                    <canvas id="cpuChart"></canvas>
-                </div>
+                <canvas id="networkChart"></canvas>
             </div>
         </div>
+        
 
         <div class="widget" id="socials">
             <div class="widget-titlebar">Socials</div>
@@ -295,6 +297,7 @@
     <script src="folders.js"></script>
     <script src="weather.js"></script>
     <script src="music.js"></script>
+    <script src="stats.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="terminal.js"></script>
     <script src="clock.js"></script>
