@@ -17,21 +17,39 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('networkChart').getContext('2d');
-    const networkChart = new Chart(ctx, {
+let networkChart;
+
+function updateChartColor(chart, color) {
+    if (chart && chart.data && chart.data.datasets) {
+        chart.data.datasets.forEach(dataset => {
+            dataset.borderColor = color;
+        });
+        chart.update();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const networkCtx = document.getElementById('networkChart').getContext('2d');
+
+    networkChart = new Chart(networkCtx, {
         type: 'line',
         data: {
-            labels: [],
+            labels: [], 
             datasets: [{
-                label: 'Response Time (ms)',
+                label: 'Network Response Time (ms)',
                 data: [],
-                borderColor: 'rgb(75, 192, 192)',
+                fill: false,
+                borderColor: 'rgb(0, 255, 0)',
                 tension: 0.1
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: true,
             scales: {
+                x: {
+                    display: false
+                },
                 y: {
                     beginAtZero: true
                 }
@@ -39,31 +57,37 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Function to update the chart with new data
-    function updateChart(responseTime) {
+    function updateNetworkStats(responseTime) {
+        const now = new Date();
+        const label = now.toLocaleTimeString();
+
+        // Update Network chart
+        networkChart.data.labels.push(label);
+        networkChart.data.datasets[0].data.push(responseTime);
+        networkChart.update();
+
+        // Keep the chart from getting too crowded
         if (networkChart.data.labels.length > 20) {
             networkChart.data.labels.shift();
             networkChart.data.datasets[0].data.shift();
         }
-        networkChart.data.labels.push(new Date().toLocaleTimeString());
-        networkChart.data.datasets[0].data.push(responseTime);
-        networkChart.update();
     }
 
-    // Function to simulate fetching data and updating the chart
-    function fetchData() {
+    function fetchNetworkStats() {
         const startTime = performance.now();
-        fetch('https://jsonplaceholder.typicode.com/todos/1') // Replace with your API endpoint
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
             .then(response => {
                 const endTime = performance.now();
                 const responseTime = endTime - startTime;
-                updateChart(responseTime);
+                updateNetworkStats(responseTime);
             })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+            .catch(error => console.error('Error fetching network stats:', error));
     }
 
-    // Fetch data every 5 seconds
-    setInterval(fetchData, 1000);
+    // Update the stats every 1 second
+    setInterval(fetchNetworkStats, 1000);
+
+    // Initial fetch
+    fetchNetworkStats();
 });
+
