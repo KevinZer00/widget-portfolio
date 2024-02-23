@@ -39,7 +39,7 @@ function updateWeatherWidget(data) {
     const feelsLike = data.main.feels_like.toFixed(1); // "Feels like" temperature
     const weatherDescription = data.weather[0].description; // Weather description
     const iconCode = data.weather[0].icon; // Weather icon code
-    const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`; // URL for weather icon
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`; // URL for weather icon
 
     // Update the text content of existing elements
     document.getElementById('weather-location').textContent = `Location: ${location}, ${country}`;
