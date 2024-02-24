@@ -533,12 +533,12 @@ html {
   /* Center the time if preferred */
 }
 
-#system-stats-widget {
+#client-stats-widget {
   width: 100%;
 }
 
 
-#system-stats-widget .widget-content {
+#client-stats-widget  .widget-content {
   display: flex;
   align-items: flex-start;
   /* Align items to the start of the flex container */
@@ -547,7 +547,7 @@ html {
   width: 100%;
 }
 
-.system-info {
+.client-info {
   flex: 1;
   /* Allows the text stats to grow as needed, taking up necessary space */
 }
@@ -579,9 +579,215 @@ html {
 }
 
 
-
-
 .socials-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+  body, html {
+    height: auto;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
+    min-height: auto;
+    max-width: 80vw; /* Set the width to 100% */
+    width: 100%;
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+  .widget {
+    width: 500px;
+  }
+
+  .widget-large {
+    grid-column: span 2; /* Make large widgets span two columns */
+  }
+
+  .widget-big {
+    grid-column: span 2; /* Make big widgets span two columns */
+    grid-row: span 1; /* Adjust the row span if necessary */
+  }
+
+  .folders-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns for the folder grid */
+  }
+
+  .socials-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns for the socials grid */
+  }
+
+  .modal {
+    width: 60%; /* Adjust the modal width */
+    height: auto; /* Set the height to auto */
+    max-height: 80%; /* Set a max height to ensure it doesn't overflow */
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+
+  body, html {
+    height: auto;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
+    min-height: auto;
+    max-width: 80vw; /* Set the width to 100% */
+    width: 100%;
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+
+
+  .widget {
+    width: 400px;
+    height: 100%;
+  }
+
+  .widget-large {
+    grid-column: span 2; /* Make large widgets span two columns */
+  }
+
+  .widget-big {
+    grid-column: span 2; /* Make big widgets span two columns */
+    grid-row: span 1; /* Adjust the row span if necessary */
+  }
+
+  .folders-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns for the folder grid */
+  }
+
+  .socials-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns for the socials grid */
+  }
+
+  .modal {
+    width: 60%; /* Adjust the modal width */
+    height: auto; /* Set the height to auto */
+    max-height: 80%; /* Set a max height to ensure it doesn't overflow */
+  }
+}
+
+@media (min-width: 500px) and (max-width: 799px) {
+
+  body, html {
+    height: auto;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns */
+    min-height: auto;
+    height: 100%;
+    max-width: 80vw; /* Set the width to 100% */
+    width: 100%;
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+
+  #terminal {
+    height: 500px;
+  }
+
+  .widget {
+    width: 100%;
+  }
+
+  .widget-large {
+    grid-column: span 2; /* Make large widgets span two columns */
+  }
+
+  .widget-big {
+    grid-column: span 2; /* Make big widgets span two columns */
+    grid-row: span 1; /* Adjust the row span if necessary */
+  }
+
+  .folders-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns for the folder grid */
+  }
+
+  .socials-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns for the socials grid */
+  }
+
+  .modal {
+    width: 60%; /* Adjust the modal width */
+    height: auto; /* Set the height to auto */
+    max-height: 80%; /* Set a max height to ensure it doesn't overflow */
+  }
+}
+
+
+@media (min-width: 350px) and (max-width: 500px) {
+
+  body, html {
+    height: auto;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns */
+    min-height: auto;
+    height: 100%;
+    max-width: 80vw; /* Set the width to 100% */
+    width: 100%;
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+
+  #terminal {
+    height: 500px;
+  }
+
+  .widget {
+    width: 350px;
+  }
+
+
+  .widget-large {
+    grid-column: span 2; /* Make large widgets span two columns */
+  }
+
+  .widget-big {
+    grid-column: span 2; /* Make big widgets span two columns */
+    grid-row: span 1; /* Adjust the row span if necessary */
+  }
+
+  .folders-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns for the folder grid */
+  }
+
+  .socials-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns for the socials grid */
+  }
+
+#terminal-body {
+  font-size: 12px;
+}  
+
+#clock .widget-content {
+  font-size: 14px;
+}
+
+  #weather .widget-content {
+    font-size: 12px;
+  }
+  #client-stats-widget {
+    font-size: 12px;
+  }
+
+  #client-stats-widget p {
+    width: 250px;
+  }
+
+  .modal {
+    width: 60%; /* Adjust the modal width */
+    height: auto; /* Set the height to auto */
+    max-height: 80%; /* Set a max height to ensure it doesn't overflow */
+  }
+}
+
+
+
