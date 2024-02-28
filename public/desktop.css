@@ -4,37 +4,32 @@
 }
 
 
-body,
-html {
+body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Courier New', Courier, monospace;
-  /* Monospace font for the terminal feel */
   background-color: #333;
-  /* Dark background for the page */
-  width: 100vw;
-  height: 100vh;
-  /* Make sure the body takes up at least the full height of the viewport */
   display: flex;
-  /* Use flexbox to center its children */
   justify-content: center;
-  /* Center horizontally */
   align-items: center;
-  /* Center vertically */
+  min-height: 100vh; /* Use min-height instead of height to allow content to expand */
+  width: 100vw;
+  overflow-x: hidden;
 }
 
+/* Grid container - keep the original layout for large screens */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Original setting for 3 columns */
   gap: 20px;
-  height: 90vh;
-  /* Adjusted height */
-  width: 1600px;
-  /* Adjust width as necessary */
+  padding: 20px; /* Add padding around the entire grid */
   box-sizing: border-box;
-}
+  width: auto; /* Allow the width to be auto to avoid overflow */
+  max-width: calc(100vw - 40px); /* Adjust max-width to account for padding */
+  margin: 0 auto; /* Center the grid-container if it's narrower than viewport */
 
+}
 
 .widget {
   background-color: #1e1e1e;
@@ -585,22 +580,21 @@ html {
 }
 
 
-@media (min-width: 1200px) and (max-width: 1400px) {
+@media (min-width: 1200px) and (max-width: 1600px) {
 
   body, html {
     height: auto;
   }
 
   .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
-    min-height: auto;
-    max-width: 80vw; /* Set the width to 100% */
-    width: 100%;
-    padding: 20px; /* Add some padding for spacing */
+    grid-template-columns: repeat(3, 1fr); /* Maintain 3 columns for wider screens */
+    padding: 20px;
+    max-width: calc(100vw - 40px); /* Account for padding */
   }
 
   .widget {
-    width: 500px;
+    width: auto; /* Allow widgets to fill the available space */
+    max-width: none; /* Remove max-width constraints if any */
   }
 
   .widget-large {
@@ -634,22 +628,19 @@ html {
   }
 
   .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns */
-    min-height: auto;
-    max-width: 80vw; /* Set the width to 100% */
-    width: 100%;
-    padding: 20px; /* Add some padding for spacing */
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for mid-size screens */
+    padding: 20px;
+    max-width: calc(100vw - 40px); /* Account for padding */
   }
-
-
 
   .widget {
-    width: 400px;
-    height: 100%;
+    width: auto; /* Allow widgets to fill the available space */
+    height: auto; /* Let the height be determined by content or aspect ratio */
   }
 
-  .widget-large {
-    grid-column: span 2; /* Make large widgets span two columns */
+  .widget-large,
+  .widget-big {
+    grid-column: span 2; /* Allow these widgets to span two columns */
   }
 
   .widget-big {
@@ -679,12 +670,10 @@ html {
   }
 
   .grid-container {
-    grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns */
-    min-height: auto;
-    height: 100%;
-    max-width: 80vw; /* Set the width to 100% */
-    width: 100%;
-    padding: 20px; /* Add some padding for spacing */
+    grid-template-columns: 1fr;
+    width: auto;
+    max-width: calc(100vw - 20px); /* Less padding for very small screens */
+    padding: 10px;
   }
 
 
@@ -693,7 +682,8 @@ html {
   }
 
   .widget {
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
 
   .widget-large {
@@ -733,7 +723,9 @@ html {
     height: 100%;
     max-width: 80vw; /* Set the width to 100% */
     width: 100%;
+    margin: auto;
     padding: 20px; /* Add some padding for spacing */
+    min-width: 400px;
   }
 
 
