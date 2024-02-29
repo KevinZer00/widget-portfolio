@@ -4,32 +4,33 @@
 }
 
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Courier New', Courier, monospace;
   background-color: #333;
+  height: auto;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Use min-height instead of height to allow content to expand */
-  width: 100vw;
   overflow-x: hidden;
 }
 
-/* Grid container - keep the original layout for large screens */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Original setting for 3 columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 20px; /* Add padding around the entire grid */
+  padding: 50px;
+  /* Adjusted height */
+  max-width: 1600px;
+  height: auto;
+  /* Adjust width as necessary */
   box-sizing: border-box;
-  width: auto; /* Allow the width to be auto to avoid overflow */
-  max-width: calc(100vw - 40px); /* Adjust max-width to account for padding */
-  margin: 0 auto; /* Center the grid-container if it's narrower than viewport */
-
 }
+
 
 .widget {
   background-color: #1e1e1e;
@@ -60,15 +61,17 @@ body, html {
   margin-top: 10px;
 }
 
-/* Custom sizes (previously defined) */
 
 .widget-large {
   grid-column: span 2;
 }
 
 .widget-tall {
+  max-height: 545px;
   grid-row: span 2;
+  overflow: hidden;
 }
+
 
 .widget-big {
   grid-column: span 2;
@@ -267,13 +270,15 @@ body, html {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
 }
 
 #terminal-body {
-  flex-grow: 1;
   overflow-y: auto;
-
+  overflow-x: hidden;
+  max-height: 100%;
 }
+
 
 /* Styles for the scrollbar track */
 #terminal-body::-webkit-scrollbar {
@@ -529,7 +534,7 @@ body, html {
 }
 
 #client-stats-widget {
-  width: 100%;
+  
 }
 
 
@@ -588,13 +593,19 @@ body, html {
 
   .grid-container {
     grid-template-columns: repeat(3, 1fr); /* Maintain 3 columns for wider screens */
-    padding: 20px;
-    max-width: calc(100vw - 40px); /* Account for padding */
+    max-width: calc(100vw - 40px); /* Account for padding */ 
   }
 
   .widget {
     width: auto; /* Allow widgets to fill the available space */
     max-width: none; /* Remove max-width constraints if any */
+  }
+
+  .widget-tall {
+    max-height: 620px;
+    min-height: 500px;
+    grid-row: span 2;
+    overflow: hidden;
   }
 
   .widget-large {
@@ -629,7 +640,6 @@ body, html {
 
   .grid-container {
     grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for mid-size screens */
-    padding: 20px;
     max-width: calc(100vw - 40px); /* Account for padding */
   }
 
@@ -673,13 +683,8 @@ body, html {
     grid-template-columns: 1fr;
     width: auto;
     max-width: calc(100vw - 20px); /* Less padding for very small screens */
-    padding: 10px;
   }
 
-
-  #terminal {
-    height: 500px;
-  }
 
   .widget {
     width: 80%;
@@ -693,6 +698,10 @@ body, html {
   .widget-big {
     grid-column: span 2; /* Make big widgets span two columns */
     grid-row: span 1; /* Adjust the row span if necessary */
+  }
+
+  #terminal {
+    height: 600px;
   }
 
   .folders-grid {
@@ -726,11 +735,6 @@ body, html {
     margin: auto;
     padding: 20px; /* Add some padding for spacing */
     min-width: 400px;
-  }
-
-
-  #terminal {
-    height: 500px;
   }
 
   .widget {
