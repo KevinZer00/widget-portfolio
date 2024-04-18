@@ -1,4 +1,3 @@
-// weather.js
 document.addEventListener('DOMContentLoaded', function () {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -21,7 +20,7 @@ function fetchWeather(latitude, longitude) {
             return response.json();
         })
         .then(data => {
-            console.log(data); // Log the data to debug
+            console.log(data); 
             updateWeatherWidget(data);
         })
         .catch(error => {

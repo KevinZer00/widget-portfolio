@@ -33,7 +33,6 @@ var tracks = [
     { title: 'Purple Dream', artist: 'Ghostrifter Official', file: '/assets/track3.mp3' },
     { title: 'When I Was a Boy', artist: 'Toyko Music Walker', file: '/assets/track4.mp3' },
     { title: 'Morning Routine', artist: 'Ghostrifter Official', file: '/assets/track5.mp3' }
-    // Add more tracks as needed
 ];
 
 

@@ -5,41 +5,41 @@ const themes = {
         bodyClass: 'light-mode',
         equalizerColor: 'rgb(0, 123, 255)',
         networkChartColor: 'rgb(0, 123, 255)',
-        volumeSliderColor: 'rgb(0, 123, 255)' // Add this line
+        volumeSliderColor: 'rgb(0, 123, 255)' 
     },
     dark: {
         bodyClass: '',
         equalizerColor: 'rgb(0, 255, 0)',
         networkChartColor: 'rgb(0, 255, 0)',
-        volumeSliderColor: 'rgb(0, 255, 0)' // Add this line
+        volumeSliderColor: 'rgb(0, 255, 0)' 
     },
     pastel: {
         bodyClass: 'pastel-mode',
         equalizerColor: 'rgb(185, 157, 255)',
         networkChartColor: 'rgb(185, 157, 255)',
-        volumeSliderColor: 'rgb(185, 157, 255)' // Add this line
+        volumeSliderColor: 'rgb(185, 157, 255)' 
     },
     synthwave: {
         bodyClass: 'synthwave-mode',
         equalizerColor: 'rgb(251, 142, 6)',
         networkChartColor: 'rgb(251, 142, 6)',
-        volumeSliderColor: 'rgb(251, 142, 6)' // Add this line
+        volumeSliderColor: 'rgb(251, 142, 6)' 
     },
     halo: {
         bodyClass: 'halo-mode',
         equalizerColor: 'rgb(251, 142, 6)',
         networkChartColor: 'rgb(251, 142, 6)',
-        volumeSliderColor: 'rgb(251, 142, 6)' // Add this line
+        volumeSliderColor: 'rgb(251, 142, 6)' 
     }
 };
 
 
-let currentTheme = 'dark'; // Default theme
+let currentTheme = 'dark'; 
 
 function changeTheme(theme) {
     currentTheme = theme;
     // Clear all theme classes first
-    document.body.classList.remove('light-mode', 'pastel-mode', 'synthwave-mode', 'halo-mode'); // Add all theme class names here
+    document.body.classList.remove('light-mode', 'pastel-mode', 'synthwave-mode', 'halo-mode'); 
 
     // Set the new theme class
     const themeClass = themes[theme].bodyClass;

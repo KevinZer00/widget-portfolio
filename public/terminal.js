@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Command processing with arguments
     function processCommand(args) {
         const command = args[0].toLowerCase();
-        const params = args.slice(1); // Separate command arguments
+        const params = args.slice(1); 
 
         outputDiv.innerHTML += `<div class="input-line">${document.querySelector('.prompt').textContent}${args.join(' ')}</div>`;
 
@@ -57,7 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 showHelp();
                 break;
             case 'about':
-                outputDiv.innerHTML += `<p>I'm a web developer passionate about building interactive web applications.</p>`;
+                outputDiv.innerHTML += `<p>I'm a web developer passionate about building interactive web applications.
+                                        I graduated from UC Merced with a Bachelor's in Applied Mathematics in 2022. Shortly after,
+                                        I became confused on what career field I actually wanted to pursue. As a result, I took some time off
+                                        to enjoy life and explore possibilities. This lead to me discovering the wonderful world of web development!
+                                        Intrigued, I began exploring tutorials such as The Odin Project. I learned a lot of the fundamentals, and
+                                        was very proud when I constructed my first landing page with some simple HTML and CSS! From that point, I made it
+                                        my mission to pursue web development as a career! </p>`;
                 break;
             case 'echo':
                 outputDiv.innerHTML += `<p>${params.join(' ')}</p>`; // Echo command arguments
