@@ -523,30 +523,25 @@ html {
 }
 
 #client-stats-widget {
-  
+  height: auto;
 }
 
 
 #client-stats-widget  .widget-content {
-  display: flex;
-  align-items: flex-start;
-  
   height: 200px;
   padding: 20px;
   width: 100%;
 }
 
-.client-info {
-  flex: 1;
-  
+#client-info {
+  width: 90%;
 }
 
 #cpu-widget {
   display: flex;
   flex-direction: column;
-  
   height: 100%;
-  
+
 }
 
 .charts {
