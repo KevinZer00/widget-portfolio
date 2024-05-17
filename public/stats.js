@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('browser-language').textContent = navigator.language;
 
     // Online Status
-    const onlineStatus = navigator.onLine ? 'Online' : 'Offline';
-    document.getElementById('online-status').textContent = onlineStatus;
+    //const onlineStatus = navigator.onLine ? 'Online' : 'Offline';
+    //document.getElementById('online-status').textContent = onlineStatus;
 
     // Viewport Size
     document.getElementById('viewport-size').textContent = `${window.innerWidth}x${window.innerHeight}`;
